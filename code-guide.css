@@ -195,7 +195,7 @@ pre code {
   padding: 3rem 1rem;
   color: rgba(255,255,255,.5);
   text-align: center;
-  background-color: #2a3440;
+  background-color: #2f2f2f;
 }
 .masthead h1 {
   color: #fff;
@@ -203,7 +203,7 @@ pre code {
 }
 .masthead .icon {
   display: inline-block;
-  margin: 2em 0;
+  margin-bottom: 2em;
 }
 .masthead-links {
   font-size: 2rem;

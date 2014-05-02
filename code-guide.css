@@ -203,7 +203,7 @@ pre code {
 }
 .masthead .icon {
   display: inline-block;
-  margin: 0 .5rem;
+  margin: 2em 0;
 }
 .masthead-links {
   font-size: 2rem;

@@ -446,7 +446,7 @@ layout: default
 
 
 <div class="heading" id="javascript">
-  <h2>CSS</h2>
+  <h2>JAVASCRIPT</h2>
 </div>
 
 <div class="section" id="javascript-linting">
@@ -467,7 +467,7 @@ layout: default
 
 <div class="section" id="javascript-spacing">
   <div class="col">
-    <h3>Declaration order</h3>
+    <h3>Spacing</h3>
     <p>Related property declarations should be grouped together following the order:</p>
     <ol>
       <li>Positioning</li>
@@ -486,7 +486,7 @@ layout: default
 
 <div class="section" id="javascript-assignments">
   <div class="col">
-    <h3>Don't use <code>@import</code></h3>
+    <h3>Assignments</h3>
     <p>Compared to <code>&lt;link&gt;</code>s, <code>@import</code> is slower, adds extra page requests, and can cause other unforeseen problems. Avoid them and instead opt for an alternate approach:</p>
     <ul>
       <li>Use multiple <code>&lt;link&gt;</code> elements</li>
@@ -506,7 +506,7 @@ layout: default
     <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
+   {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -517,8 +517,7 @@ layout: default
     <p>In Textmate, use <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/prefixed-properties.css %}{% endhighlight %}
-  </div>
+   {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
 </div>
 
 <div class="section" id="javascript-comments">
@@ -528,7 +527,7 @@ layout: default
     <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -548,7 +547,7 @@ layout: default
     <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/shorthand.css %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -558,7 +557,7 @@ layout: default
     <p>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.</p>
   </div>
   <div class="col">
-    {% highlight scss %}{% include css/nesting.scss %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -569,7 +568,7 @@ layout: default
     <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/comments.css %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -587,7 +586,7 @@ layout: default
     <p>It's also useful to apply many of these same rules when creating Sass and Less variable names.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 
@@ -607,8 +606,7 @@ layout: default
     </ul>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/selectors.css %}{% endhighlight %}
-  </div>
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
 </div>
 
 <div class="section" id="javascript-switch-statements">
@@ -622,7 +620,7 @@ layout: default
     </ul>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/organization-comments.css %}{% endhighlight %}
+    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
   </div>
 </div>
 

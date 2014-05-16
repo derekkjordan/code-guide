@@ -99,7 +99,7 @@ layout: default
 <div class="section" id="html-doctype">
   <div class="col">
     <h3>HTML5 doctype</h3>
-    <p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page.</p>
+    <p>Enforce standards mode and more consistent rendering in every browser possible with this simple doctype at the beginning of every HTML page. Some of our applications are still using HTML4 doctype and we are currently switching to HTML5.</p>
   </div>
   <div class="col">
     {% highlight html %}{% include html/doctype.html %}{% endhighlight %}
@@ -173,7 +173,7 @@ layout: default
 <div class="section" id="html-attribute-order">
   <div class="col">
     <h3>Attribute order</h3>
-    <p>HTML attributes should come in this particular order for easier reading of code.</p>
+    <p>We highly encourage our team to follow these HTML attributes order for easier reading of code, but we take this as a suggestion and not a rule.</p>
     <ul>
       <li><code>class</code></li>
       <li><code>id</code>, <code>name</code></li>
@@ -182,7 +182,10 @@ layout: default
       <li><code>title</code>, <code>alt</code></li>
       <li><code>aria-*</code>, <code>role</code></li>
     </ul>
-    <p>Classes make for great reusable components, so they come first. Ids are more specific and should be used sparingly (e.g., for in-page bookmarks), so they come second.</p>
+    <h4>Two attribute rules to follow:</h4>
+    <ul>
+      <li>Always add <code>title</code> to <code><a></code> tags</li>
+    </ul>
   </div>
   <div class="col">
     {% highlight html %}{% include html/attribute-order.html %}{% endhighlight %}

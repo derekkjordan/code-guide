@@ -3,8 +3,7 @@
     position: absolute;
     display: block;
     float: right;
-    top: 0;
-    z-index: 100;  
+    top: 0; 
 
     /* Appearance */
     width: 100px;
@@ -16,7 +15,5 @@
     /* Typography */
     font: normal 13px "Helvetica Neue", sans-serif;
     line-height: 1.5;
-    color: #333;
-
-    
+    color: #333;    
 }

@@ -1,0 +1,19 @@
+.declaration-order {
+    /* Positioning */
+    position: absolute;
+    display: block;
+    float: right;
+    top: 0; 
+
+    /* Appearance */
+    width: 100px;
+    padding: 15px;
+    border: 1px solid #e5e5e5;
+    background-color: #f5f5f5;
+    opacity: 1;
+
+    /* Typography */
+    font: normal 13px "Helvetica Neue", sans-serif;
+    line-height: 1.5;
+    color: #333;    
+}

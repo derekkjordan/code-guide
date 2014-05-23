@@ -1,15 +1,15 @@
-/* Single declarations on one line */
+/* Do not use one line for single declarationsions */
 .span1 { width: 60px; }
 .span2 { width: 140px; }
 .span3 { width: 220px; }
 
-/* Multiple declarations, one per line */
-.sprite {
-	display: inline-block;
-	width: 16px;
-	height: 15px;
-	background-image: url(../img/sprite.png);
+/* Split lines for single declarations */
+.icon { 
+	background-position: 0 0; 
 }
-.icon           { background-position: 0 0; }
-.icon-home      { background-position: 0 -20px; }
-.icon-account   { background-position: 0 -40px; }
+.icon-home { 
+	background-position: 0 -20px; 
+}
+.icon-account { 
+	background-position: 0 -40px; 
+}

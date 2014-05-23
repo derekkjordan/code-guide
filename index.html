@@ -32,7 +32,7 @@ layout: default
       <li><a href="#css-shorthand">Shorthand notation</a></li>
       <li><a href="#css-nesting">Nesting in Less and Sass</a></li>
       <li><a href="#css-comments">Comments</a></li>
-      <li><a href="#css-classes">Classes</a></li>
+      <li><a href="#css-classes">Classes and Ids</a></li>
       <li><a href="#css-selectors">Selectors</a></li>
       <li><a href="#css-organization">Organization</a></li>
     </ul>
@@ -269,7 +269,7 @@ layout: default
 <div class="section" id="css-media-queries">
   <div class="col">
     <h3>Media query placement</h3>
-    <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.</p>
+    <p>Place media queries at the end of the document. Doing so makes it easier to understand the breakpoints in the future.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/media-queries.css %}{% endhighlight %}
@@ -290,8 +290,7 @@ layout: default
 <div class="section" id="css-single-declarations">
   <div class="col">
     <h3>Single declarations</h3>
-    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
-    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+    <p>In instances where a rule set includes <strong>only one declaration</strong>, should be split to separate lines. That consistency helps readability throughout the document.</p>
   </div>
   <div class="col">
     {% highlight css %}{% include css/single-declarations.css %}{% endhighlight %}
@@ -341,16 +340,15 @@ layout: default
 
 <div class="section" id="css-classes">
   <div class="col">
-    <h3>Class names</h3>
+    <h3>Classes and Ids names</h3>
+    <h2>Classes</h2>
     <ul>
-      <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn-danger</code>).</li>
-      <li>Avoid excessive and arbitrary shorthand notation. <code>.btn</code> is useful for <em>button</em>, but <code>.s</code> doesn't mean anything.</li>
-      <li>Keep classes as short and succinct as possible.</li>
-      <li>Use meaningful names; use structural or purposeful names over presentational.</li>
-      <li>Prefix classes based on the closest parent or base class.</li>
-      <li>Use <code>.js-*</code> classes to denote behavior (as opposed to style), but keep these classes out of your CSS.</li>
+      <li>Keep classes lowercase and use dashes.</li>
     </ul>
-    <p>It's also useful to apply many of these same rules when creating Sass and Less variable names.</p>
+    <h2>Ids</h2>
+    <ul>
+      <li>Use CamelCase with the initial letter capitalized.</li>
+    </ul>
   </div>
   <div class="col">
     {% highlight css %}{% include css/class-names.css %}{% endhighlight %}
@@ -392,19 +390,6 @@ layout: default
   </div>
 </div>
 
-<div class="section" id="css-editor-prefs">
-  <div class="col">
-    <h3>Editor preferences</h3>
-    <p>Set your editor to the following settings to avoid common code inconsistencies and dirty diffs:</p>
-    <ul>
-      <li>Use soft-tabs set to two spaces.</li>
-      <li>Trim trailing white space on save.</li>
-      <li>Set encoding to UTF-8.</li>
-      <li>Add new line at end of files.</li>
-    </ul>
-    <p>Consider documenting and applying these preferences to your project's <code>.editorconfig</code> file. For an example, see <a href="https://github.com/twbs/bootstrap/blob/master/.editorconfig">the one in Bootstrap</a>. Learn more <a href="http://editorconfig.org">about EditorConfig</a>.</p>
-  </div>
-</div>
 
 
 
@@ -415,13 +400,7 @@ layout: default
 <div class="section" id="javascript-linting">
   <div class="col">
     <h3>Linting</h3>
-    <ul>
-      <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
-      <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
-      <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
-      <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
-    </ul>
-    <p>Questions on the terms used here? See the <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a> on Wikipedia.</p>
+    <p>Use JSHint to detect errors and potential problems. Every jQuery project has a Grunt task for linting all JavaScript files: grunt jshint. The options for JSHint are stored in a .jshintrc file; many repositories will have multiple .jshintrc files based on the type of code in each directory.</p>
   </div>
   <div class="col">
     {% highlight js %}{% include js/linting.js %}{% endhighlight %}
@@ -431,16 +410,22 @@ layout: default
 <div class="section" id="javascript-spacing">
   <div class="col">
     <h3>Spacing</h3>
-    <p>Related property declarations should be grouped together following the order:</p>
-    <ol>
-      <li>Positioning</li>
-      <li>Box model</li>
-      <li>Typographic</li>
-      <li>Visual</li>
-    </ol>
-    <p>Positioning comes first because it can remove an element from the normal flow of the document and override box model related styles. The box model comes next as it dictates a component's dimensions and placement.</p>
-    <p>Everything else takes place <em>inside</em> the component or without impacting the previous two sections, and thus they come last.</p>
-    <p>For a complete list of properties and their order, please see <a href="http://twitter.github.com/recess">Recess</a>.</p>
+    <p>In general, the jQuery style guide encourages liberal spacing for improved human readability. The minification process creates a file that is optimized for browsers to read and process.</p>
+    <ul>
+      <li>Indentation with tabs.</li>
+      <li>No whitespace at the end of line or on blank lines.</li>
+      <li>Lines should be no longer than 80 characters, and must not exceed 100 (counting tabs as 4 spaces).</li>
+      <li>if/else/for/while/try always have braces and always go on multiple lines.</li>
+      <li>Unary special-character operators (e.g., !, ++) must not have space next to their operand.</li>
+      <li>Any , and ; must not have preceding space.</li>
+      <li>Any ; used as a statement terminator must be at the end of the line.</li>
+      <li>Any : after a property name in an object definition must not have preceding space.</li>
+      <li>The ? and : in a ternary conditional must have space on both sides.</li>
+      <li>No filler spaces in empty constructs (e.g., {}, [], fn())</li>
+      <li>New line at the end of each file.</li>
+      <li>If the entire file is wrapped in a closure, the function body is not indented. See full file closures for examples.</li>
+    </ul>
+    
   </div>
   <div class="col">
     {% highlight js %}{% include js/spacing.js %}{% endhighlight %}
@@ -450,13 +435,7 @@ layout: default
 <div class="section" id="javascript-assignments">
   <div class="col">
     <h3>Assignments</h3>
-    <p>Compared to <code>&lt;link&gt;</code>s, <code>@import</code> is slower, adds extra page requests, and can cause other unforeseen problems. Avoid them and instead opt for an alternate approach:</p>
-    <ul>
-      <li>Use multiple <code>&lt;link&gt;</code> elements</li>
-      <li>Compile your CSS with a preprocessor like Sass or Less into a single file</li>
-      <li>Concatenate your CSS files with features provided in Rails, Jekyll, and other environments</li>
-    </ul>
-    <p>For more information, <a href="http://www.stevesouders.com/blog/2009/04/09/dont-use-import/">read this article by Steve Souders</a>.</p>
+    <p>Assignments in a declaration must be on their own line. Declarations that don't have an assignment must be listed together at the start of the declaration.</p>
   </div>
   <div class="col">
     {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
@@ -466,126 +445,112 @@ layout: default
 <div class="section" id="javascript-equality">
   <div class="col">
     <h3>Equality</h3>
-    <p>Place media queries as close to their relevant rule sets whenever possible. Don't bundle them all in a separate stylesheet or at the end of the document. Doing so only makes it easier for folks to miss them in the future. Here's a typical setup.</p>
+    <p>Strict equality checks (===) must be used in favor of abstract equality checks (==). The only exception is when checking for undefined and null by way of null.</p>
   </div>
   <div class="col">
-   {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+   {% highlight js %}{% include js/equality.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-type-checks">
   <div class="col">
     <h3>Type Checks</h3>
-    <p>When using vendor prefixed properties, indent each property such that the declaration's value lines up vertically for easy multi-line editing.</p>
-    <p>In Textmate, use <strong>Text &rarr; Edit Each Line in Selection</strong> (&#8963;&#8984;A). In Sublime Text 2, use <strong>Selection &rarr; Add Previous Line</strong> (&#8963;&#8679;&uarr;) and <strong>Selection &rarr;  Add Next Line</strong> (&#8963;&#8679;&darr;).</p>
-  </div>
+    <ul>
+      <li>String: typeof object === "string"</li>
+      <li>Number: typeof object === "number"</li>
+      <li>Boolean: typeof object === "boolean"</li>
+      <li>Object: typeof object === "object"</li>
+      <li>Plain Object: jQuery.isPlainObject( object )</li>
+      <li>Function: jQuery.isFunction( object )</li>
+      <li>Array: jQuery.isArray( object )</li>
+      <li>Element: object.nodeType</li>
+      <li>null: object === null</li>
+      <li>null or undefined: object == null</li>
+      <li>undefined:</li>
+        <ul>
+          <li>Global Variables: typeof variable === "undefined"</li>
+          <li>Local Variables: variable === undefined</li>
+          <li>Properties: object.prop === undefined</li>
+        </ul>
+    </ul>
   <div class="col">
-   {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+   {% highlight js %}{% include js/type-checks.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-comments">
   <div class="col">
     <h3>Comments</h3>
-    <p>In instances where a rule set includes <strong>only one declaration</strong>, consider removing line breaks for readability and faster editing. Any rule set with multiple declarations should be split to separate lines.</p>
-    <p>The key factor here is error detection—e.g., a CSS validator stating you have a syntax error on Line 183. With a single declaration, there's no missing it. With multiple declarations, separate lines is a must for your sanity.</p>
+    <p>Comments are always preceded by a blank line. Comments start with a capital first letter, but don't require a period at the end, unless you're writing full sentences. There must be a single space between the comment token and the comment text.</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/comments.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-quotes">
   <div class="col">
     <h3>Quotes</h3>
-    <p>Strive to limit use of shorthand declarations to instances where you must explicitly set all the available values. Common overused shorthand properties include:</p>
-    <ul>
-      <li><code>padding</code></li>
-      <li><code>margin</code></li>
-      <li><code>font</code></li>
-      <li><code>background</code></li>
-      <li><code>border</code></li>
-      <li><code>border-radius</code></li>
-    </ul>
-    <p>Often times we don't need to set all the values a shorthand property represents. For example, HTML headings only set top and bottom margin, so when necessary, only override those two values. Excessive use of shorthand properties often leads to sloppier code with unnecessary overrides and unintended side effects.</p>
-    <p>The Mozilla Developer Network has a great article on <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Shorthand_properties">shorthand properties</a> for those unfamiliar with notation and behavior.</p>
+    <p>jQuery uses double quotes.</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/quotes.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-semicolons">
   <div class="col">
     <h3>Semicolons</h3>
-    <p>Avoid unnecessary nesting. Just because you can nest, doesn't mean you always should. Consider nesting only if you must scope styles to a parent and if there are multiple elements to be nested.</p>
+    <p>Use them. Never rely on ASI.</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/semicolons.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-naming-conventions">
   <div class="col">
-    <h3>Conventions</h3>
-    <p>Code is written and maintained by people. Ensure your code is descriptive, well commented, and approachable by others. Great code comments convey context or purpose. Do not simply reiterate a component or class name.</p>
-    <p>Be sure to write in complete sentences for larger comments and succinct phrases for general notes.</p>
+    <h3>Naming Conventions</h3>
+    <p>Variable and function names should be full words, using camel case with a lowercase first letter. Names should be descriptive but not excessively so. Exceptions are allowed for iterators, such as the use of i to represent the index in a loop. Constructors do not need a capital first letter.</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/naming-conventions.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-global-variables">
   <div class="col">
     <h3>Global Variables</h3>
-    <ul>
-      <li>Keep classes lowercase and use dashes (not underscores or camelCase). Dashes serve as natural breaks in related class (e.g., <code>.btn</code> and <code>.btn-danger</code>).</li>
-      <li>Avoid excessive and arbitrary shorthand notation. <code>.btn</code> is useful for <em>button</em>, but <code>.s</code> doesn't mean anything.</li>
-      <li>Keep classes as short and succinct as possible.</li>
-      <li>Use meaningful names; use structural or purposeful names over presentational.</li>
-      <li>Prefix classes based on the closest parent or base class.</li>
-      <li>Use <code>.js-*</code> classes to denote behavior (as opposed to style), but keep these classes out of your CSS.</li>
-    </ul>
-    <p>It's also useful to apply many of these same rules when creating Sass and Less variable names.</p>
+    <p>Each project may expose at most one global variable.</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/global-variables.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-dom-node-rules">
   <div class="col">
     <h3>DOM Node Rules</h3>
-    <ul>
-      <li>Use classes over generic element tag for optimum rendering performance.</li>
-      <li>Avoid using several attribute selectors (e.g., <code>[class^="..."]</code>) on commonly occuring components. Browser performance is known to be impacted by these.</li>
-      <li>Keep selectors short and strive to limit the number of elements in each selector to three.</li>
-      <li>Scope classes to the closest parent <strong>only</strong> when necessary (e.g., when not using prefixed classes).</li>
-    </ul>
-    <p>Additional reading:</p>
-    <ul>
-      <li><a href="http://markdotto.com/2012/02/16/scope-css-classes-with-prefixes/">Scope CSS classes with prefixes</a></li>
-      <li><a href="http://markdotto.com/2012/03/02/stop-the-cascade/">Stop the cascade</a></li>
-    </ul>
+    <p>.nodeName must always be used in favor of .tagName.</p>
+    <p>.nodeType must be used to determine the classification of a node (not .nodeName).</p>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/dom-node-rules.js %}{% endhighlight %}
   </div>
 </div>
 
 <div class="section" id="javascript-switch-statements">
   <div class="col">
     <h3>Switch Statements</h3>
+    <p>The usage of switch statements is generally discouraged, but can be useful when there are a large number of cases - especially when multiple cases can be handled by the same block, or fall-through logic (the default case) can be leveraged.</p>
+    <p>When using switch statements:</p>
     <ul>
-      <li>Organize sections of code by component.</li>
-      <li>Develop a consistent commenting hierarchy.</li>
-      <li>Use consistent white space to your advantage when separating sections of code for scanning larger documents.</li>
-      <li>When using multiple CSS files, break them down by component instead of page. Pages can be rearranged and components moved.</li>
+      <li>Use a break for each case other than default./li>
+      <li>Align case statements with the switch.</li>
     </ul>
   </div>
   <div class="col">
-    {% highlight js %}{% include js/assignments.js %}{% endhighlight %}
+    {% highlight js %}{% include js/switch-statements.js %}{% endhighlight %}
   </div>
 </div>
 

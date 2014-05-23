@@ -1,9 +1,9 @@
-/* Bad example */
-.t { ... }
-.red { ... }
-.header { ... }
-
-/* Good example */
+/* Classes */
 .tweet { ... }
 .important { ... }
 .tweet-header { ... }
+
+/* Ids */
+#Tweet { ... }
+#Important { ... }
+#TweetHeader { ... }

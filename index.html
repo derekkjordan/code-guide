@@ -20,6 +20,14 @@ layout: default
       <li><a href="#html-reducing-markup">Reducing markup</a></li>
     </ul>
     <h4><a href="#responsive">RESPONSIVE</a></h4>
+    <ul>
+      <li><a href="#responsive-files">HTML5 doctype</a></li>
+      <li><a href="#responsive-approach">Language attribute</a></li>
+      <li><a href="#responsive-viewport">Character encoding</a></li>
+      <li><a href="#responsive-mediaqueries">CSS and JavaScript includes</a></li>
+      <li><a href="#responsive-fonts">Syntax</a></li>
+      <li><a href="#responsive-htmlstructure">Practicality over purity</a></li>
+    </ul>
   </div>
   <div class="col">
     <h4><a href="#css">CSS</a></h4>
@@ -208,7 +216,7 @@ layout: default
   <h2>Rules for Responsive Websites</h2>
 </div>
 
-<div class="section" id="responsive">
+<div class="section" id="responsive-files">
   <div class="col">
     <h3>Files</h3>
      <ul>
@@ -220,32 +228,79 @@ layout: default
   <div class="col">
     {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
   </div>
+</div>
+
+<div class="section" id="responsive-approach">
+  <div class="col">
     <h3>Fluid vs Fixed vs Mixed</h3>
-    <h3>Viewport</h3>
-    <h3>Media Queries</h3>
-    <h3>Fonts</h3>
-    <h3>HTML Structure</h3>
-    <ul>
-      <li>Use tabs—they're the only way to guarantee code renders the same in any environment.</li>
-      <li>When grouping selectors, keep individual selectors to a single line.</li>
-      <li>Include one space before the opening brace of declaration blocks for legibility.</li>
-      <li>Place closing braces of declaration blocks on a new line.</li>
-      <li>Include one space after <code>:</code> for each declaration.</li>
-      <li>Each declaration should appear on its own line for more accurate error reporting.</li>
-      <li>End all declarations with a semi-colon. The last declaration's is optional, but your code is more error prone without it.</li>
-      <li>Comma-separated property values should include a space after each comma (e.g., <code>box-shadow</code>).</li>
-      <li>Do prefix property values or color parameters with a leading zero (e.g., <code>0.5</code> instead of <code>.5</code> and <code>-0.5px</code> instead of <code>-.5px</code>).</li>
-      <li>Lowercase all hex values, e.g., <code>#fff</code>. Lowercase letters are much easier to discern when scanning a document as they tend to have more unique shapes.</li>
-      <li>Use shorthand hex values where available, e.g., <code>#fff</code> instead of <code>#ffffff</code>.</li>
-      <li>Quote attribute values in selectors, e.g., <code>input[type="text"]</code>. <a href="http://mathiasbynens.be/notes/unquoted-attribute-values#css">They’re only optional in some cases</a>, and it’s a good practice for consistency.</li>
-      <li>Avoid specifying units for zero values, e.g., <code>margin: 0;</code> instead of <code>margin: 0px;</code>.</li>
+     <ul>
+      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
+      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
+      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
     </ul>
-    <p>Questions on the terms used here? See the <a href="http://en.wikipedia.org/wiki/Cascading_Style_Sheets#Syntax">syntax section of the Cascading Style Sheets article</a> on Wikipedia.</p>
   </div>
   <div class="col">
-    {% highlight css %}{% include css/syntax.css %}{% endhighlight %}
+    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
   </div>
 </div>
+
+<div class="section" id="responsive-viewport">
+  <div class="col">
+    <h3>Viewport</h3>
+     <ul>
+      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
+      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
+      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="responsive-mediaqueries">
+  <div class="col">
+    <h3>Media Queries</h3>
+     <ul>
+      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
+      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
+      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="responsive-fonts">
+  <div class="col">
+    <h3>Fonts</h3>
+     <ul>
+      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
+      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
+      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="responsive-htmlstructure">
+  <div class="col">
+    <h3>HTML Structure</h3>
+     <ul>
+      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
+      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
+      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+  </div>
+</div>
+
+
 
 
 

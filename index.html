@@ -246,13 +246,10 @@ layout: default
   <div class="col">
     <h3>Viewport</h3>
      <ul>
-      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
-      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
-      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
-    </ul>
+      <li>To ensure that the browser will render the page size correctly, we add this responsive Meta Tag.</li>
   </div>
   <div class="col">
-    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+    {% highlight html %}{% include html/responsive-viewport.html %}{% endhighlight %}
   </div>
 </div>
 
@@ -260,13 +257,17 @@ layout: default
   <div class="col">
     <h3>Media Queries</h3>
      <ul>
-      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
-      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
-      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+      <li>We write all of our CSS in one file. Our media queries are place at the bottom of the CSS file. We follow this hierarchy:</li>
+        <ol>
+          <li>Desktop</li>
+          <li>Tablet</li>
+          <li>Phone</li>
+        </ol> 
+      <li>Use the breakpoints as indicated on the example here.</li>
     </ul>
   </div>
   <div class="col">
-    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+    {% highlight html %}{% include html/responsive-mediaqueries.html %}{% endhighlight %}
   </div>
 </div>
 
@@ -274,13 +275,14 @@ layout: default
   <div class="col">
     <h3>Fonts</h3>
      <ul>
-      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
-      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
-      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+      <li>The CSS for the fonts are placed on top of the CSS file.</li>
+      <li>Fonts can be <a href="http://everythingfonts.com/font-face">converted online</a> and the files need to be place in the server. Refer to the "files" section here for correct placement of your fonts in the server.
+      <li>You will need the following font files format: .eot, .svg, .ttf, .woff, .woff2 and the example of CSS showing here.</li>
+</li>
     </ul>
   </div>
   <div class="col">
-    {% highlight html %}{% include html/responsive-files.html %}{% endhighlight %}
+    {% highlight html %}{% include html/responsive-fonts.html %}{% endhighlight %}
   </div>
 </div>
 
@@ -288,9 +290,7 @@ layout: default
   <div class="col">
     <h3>HTML Structure</h3>
      <ul>
-      <li>CSS files are placed inside of "css" folder in the server and should be named according to the job description.</li>
-      <li>Image files are placed inside of "img" folder. If job specific, the image must be place inside of its job folder. If generic, the image must be placed directly in the "img" folder.</li>
-      <li>Fonts files are placed inside of "fonts" folder. Same rules as "img" folder apply for generic vs job specific fonts.</li>
+      <li>We are constantly updating our templates to achive better results with responsive websites. Please follow <a href="http://everythingfonts.com/font-face">our templates</a> HTML strucure.</li>
     </ul>
   </div>
   <div class="col">

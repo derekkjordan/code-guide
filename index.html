@@ -645,3 +645,155 @@ layout: default
 </div>
 
 
+
+
+<div class="heading" id="php">
+  <h2>PHP</h2>
+  <p>Adapted for FLS from <a href="http://www.php-fig.org/psr/psr-2" target="_blank">PHP FIG PSR-2</a> guidelines.</p>
+</div>
+
+<div class="section" id="php-overview">
+  <div class="col">
+    <h3>Overview</h3>
+    <ul>
+      <li>Code MUST follow a "coding style guide" PSR [PSR-1].</li>
+      <li>Code MUST use tabs for indenting, width 4 spaces.</li>
+      <li>There MUST NOT be a hard limit on line length; the soft limit MUST be 120 characters; lines SHOULD be 80 characters or less.</li>
+      <li>There MUST be one blank line after the namespace declaration, and there MUST be one blank line after the block of use declarations.</li>
+      <li>Opening braces for classes MUST go on the next line, and closing braces MUST go on the next line after the body.</li>
+      <li>Opening braces for methods MUST go on the next line, and closing braces MUST go on the next line after the body.</li>
+      <li>Visibility MUST be declared on all properties and methods; abstract and final MUST be declared before the visibility; static MUST be declared after the visibility.</li>
+      <li>Control structure keywords MUST have one space after them; method and function calls MUST NOT.</li>
+      <li>Opening braces for control structures MUST go on the next line, and closing braces MUST go on the next line after the body.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php/overview.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-general">
+  <div class="col">
+    <h3>General</h3>
+    <li>Files
+      <ul>
+        <li>Files MUST use only "&Lt;?php" and "&lt;?=".</li>
+        <li>All PHP files MUST use the Unix LF (linefeed) line ending.</li>
+        <li>All PHP files MUST end with a single blank line.</li>
+        <li>The closing "?&gt;>" tag MUST be ommitted from files containing only PHP.</li>
+      </ul>
+    </li>
+    <li>Lines
+      <ul>
+        <li>There MUST NOT be a hard limit on line length.</li>
+        <li>The soft limit on line length MUST be 120 characters.</li>
+        <li>Lines SHOULD NOT be longer than 80 characters; lines longer than that SHOULD be split into multiple subsequent lines of no more than 80 characters each.</li>
+        <li>There MUST NOT be trailing whitespace at the end of non-blank lines.</li>
+        <li>Blank lines MAY be added to improve readability and to indicate related blocks of code.</li>
+        <li>There MUST NOT be more than one statement per line.</li>
+      </ul>
+    </li>
+    <li>Indenting
+      <ul>
+        <li>Code MUST use tabs for indenting, width 4 spaces.</li>
+      </ul>
+    </li>
+    <li>Keywords and True/False/Null
+      <ul>
+        <li>PHP <a href="http://php.net/manual/en/reserved.keywords.php" target="_blank">keywords</a> MUST be in lower case.</li>
+      </ul>
+    </li>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php/general.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-namespace">
+  <div class="col">
+    <h3>Namespace and Use Declarations</h3>
+    <ul>
+      <li>When present, there MUST be one blank line after the namespace declaration.</li>
+      <li>When present, all use declarations MUST go after the namespace declaration.</li>
+      <li>There MUST be one use keyword per declaration.</li>
+      <li>There MUST be one blank line after the use block.</li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php/namespace.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-classes">
+  <div class="col">
+    <h3>Classes, Methods and Properties</h3>
+
+    <ul>
+      <li>Classes
+        <ul>
+          <li>Class names MUST be declared in StudlyCaps</li>
+          <li>The extends and implements keywords MUST be declared on the same line as the class name.</li>
+          <li>Visibility MUST be specified for all methods and properties</li>
+          <li>When present, the abstract and final declarations MUST precede the visibility declaration.</li>
+          <li>When present, the static declaration MUST come after the visibility declaration.</li>
+          <li>Method and Property visibility should be indicated by underscore prefixing
+            <ul>
+              <li>Public should not have an underscore prefix</li>
+              <li>Protected should have a 1 underscore prefix</li>
+              <li>Private should have a 2 underscore prefix</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li>Methods
+        <ul>
+          <li>
+            Method names MUST be in camelCase
+            <ul>
+              <li><i>Unless</i> it is a "dispatchable" action in a CakePHP Controller or Shell class
+            </ul>
+          </li>
+          <li>Method names MUST NOT be declared with a space after the method name.</li>
+          <li>The opening brace MUST go on its own line, and the closing brace MUST go on the next line following the body.</li>
+          <li>There MUST NOT be a space after the opening parenthesis, and there MUST NOT be a space before the closing parenthesis.</li>
+          <li>In the argument list, there MUST NOT be a space before each comma, and there MUST be one space after each comma.</li>
+          <li>Method arguments with default values MUST go at the end of the argument list.</li>
+        </ul>
+      </li>
+      <li>Properties
+        <ul>
+          <li>Properties MUST be declared in camelCase</li>
+          <li>The var keyword MUST NOT be used to declare a property.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php/classes.php %}{% endhighlight %}
+  </div>
+</div>
+
+<div class="section" id="php-control-structures">
+  <div class="col">
+    <h3>Control Structures</h3>
+    <ul>
+      <li>There MUST be one space after the control structure keyword</li>
+      <li>The opening brace MUST go on its own line, and the closing brace MUST go on the next line following the body.</li>
+      <li>The structure body MUST be indented once</li>
+      <li>`if`, `elseif`, `else`
+        <ul>
+          <li>The keyword `elseif` SHOULD be used instead of `else if` so that all control keywords look like single words.</li>
+        </ul>
+      </li>
+      <li>`switch`, `case`
+        <ul>
+          <li>The `case` statement MUST be indented once from `switch`, and the `break` keyword (or other terminating keyword) MUST be indented at the same level as the `case` body.</li>
+          <li>There MUST be a comment such as `// no break` when fall-through is intentional in a non-empty `case` body.</li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+  <div class="col">
+    {% highlight php %}{% include php/control-structures.php %}{% endhighlight %}
+  </div>
+</div>

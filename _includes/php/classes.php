@@ -24,10 +24,16 @@ class ExampleClass extends SomeOtherClass
 
 class ExampleController extends AppController
 {
-    // controllers must have underscored methods per CakePHP convention
-    public function url_action()
+    // public actions such as callback methods should be camelized so they are not callable by URL
+    public function beforeFilter()
     {
         //
+    }
+
+    // URL (dispatchable) actions must be underscored per CakePHP convention
+    public function url_action()
+    {
+        // renders view of same name
     }
 }
 

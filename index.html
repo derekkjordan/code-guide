@@ -667,13 +667,14 @@ layout: default
 
 <div class="section" id="php-general">
   <div class="col">
-    <h3>General</h3>
+    <h3>General Rules</h3>
+    <ul>
     <li>Files
       <ul>
-        <li>Files MUST use only "&Lt;?php" and "&lt;?=".</li>
+        <li>Files MUST use only "&lt;?php" and "&lt;?=".</li>
         <li>All PHP files MUST use the Unix LF (linefeed) line ending.</li>
         <li>All PHP files MUST end with a single blank line.</li>
-        <li>The closing "?&gt;>" tag MUST be ommitted from files containing only PHP.</li>
+        <li>The closing "?&gt;" tag MUST be ommitted from files containing only PHP.</li>
       </ul>
     </li>
     <li>Lines
@@ -696,6 +697,7 @@ layout: default
         <li>PHP <a href="http://php.net/manual/en/reserved.keywords.php" target="_blank">keywords</a> MUST be in lower case.</li>
       </ul>
     </li>
+    </ul>
   </div>
   <div class="col">
     {% highlight php %}{% include php/general.php %}{% endhighlight %}
